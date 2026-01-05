@@ -1,5 +1,6 @@
 name: Deploy to GitHub Pages
 
+# Triggered on push to main or manually via workflow_dispatch
 on:
   push:
     branches:
