@@ -2,7 +2,7 @@
 
 A modern, interactive portfolio website built with React, Vite, and Three.js. Features smooth animations, 3D graphics, and a responsive design.
 
-## 🚀 Features
+## Features
 
 - **Interactive 3D Graphics**: Three.js powered particle logos and visual effects
 - **Smooth Animations**: Framer Motion for fluid transitions and scroll animations
@@ -16,7 +16,7 @@ A modern, interactive portfolio website built with React, Vite, and Three.js. Fe
   - Websites portfolio
   - Contact form with EmailJS integration
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **React 18** - UI library
 - **Vite** - Build tool and dev server
@@ -26,23 +26,8 @@ A modern, interactive portfolio website built with React, Vite, and Three.js. Fe
 - **EmailJS** - Contact form integration
 - **React Three Fiber** - React renderer for Three.js
 
-## 📦 Installation
 
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-```
-
-## 🌐 Deployment
+## Deployment
 
 This project is configured for automatic deployment to GitHub Pages via GitHub Actions.
 
@@ -56,7 +41,7 @@ This project is configured for automatic deployment to GitHub Pages via GitHub A
 
 The site will automatically build and deploy on every push to `main`.
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
@@ -68,13 +53,13 @@ src/
 └── assets/         # Images and static assets
 ```
 
-## 🎨 Customization
+## Customization
 
 - Update project data in `src/data/projects.js`
 - Modify experience in `src/data/experience.js`
 - Adjust skills in `src/data/skills.js`
 - Customize styling in `src/index.css` and component files
 
-## 📝 License
+## License
 
-This project is private and personal.
+Feel free to copy!
