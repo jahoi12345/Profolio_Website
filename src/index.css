@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dark Base - Mondrian Style */
+  --bg: #0a0a0a;
+  --slab-surface: #111111;
+  --slab-edge: rgba(255, 255, 255, 0.12);
+  
+  /* Mondrian Primary Colors */
+  --mondrian-red: #E60012;
+  --mondrian-blue: #0052FF;
+  --mondrian-yellow: #FFEB00;
+  --mondrian-black: #000000;
+  --mondrian-white: #FFFFFF;
+  
+  /* Primary Accent (Blue) */
+  --accent: var(--mondrian-blue);
+  --accent-red: var(--mondrian-red);
+  --accent-yellow: var(--mondrian-yellow);
+  
+  --text-main: #e8e8e8;
+  --text-dim: #888;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --shadow-sharp: 20px 20px 60px #000000, -5px -5px 20px rgba(255,255,255,0.03);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  * {
+    cursor: none;
+  }
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Cursor Styles */
+#cursor {
+  width: 20px;
+  height: 20px;
+  background: var(--mondrian-blue);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease;
+  transform: translate(-50%, -50%);
+}
+
+/* Grain Texture - High Resolution */
+.grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+  background-size: 400px 400px;
+  image-rendering: crisp-edges;
+}
+
+/* Slab Component Base Styles */
+.slab {
+  background: var(--slab-surface);
+  border: 1px solid var(--slab-edge);
+  box-shadow: var(--shadow-sharp);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.slab::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection */
+::selection {
+  background: var(--mondrian-yellow);
+  color: var(--bg);
+}
+
+/* Mondrian Color Accents */
+.mondrian-red {
+  color: var(--mondrian-red);
+  border-color: var(--mondrian-red);
+}
+
+.mondrian-blue {
+  color: var(--mondrian-blue);
+  border-color: var(--mondrian-blue);
+}
+
+.mondrian-yellow {
+  color: var(--mondrian-yellow);
+  border-color: var(--mondrian-yellow);
+}
+
+/* Accent borders for variety */
+.slab-accent-red {
+  border-color: var(--mondrian-red);
+}
+
+.slab-accent-blue {
+  border-color: var(--mondrian-blue);
+}
+
+.slab-accent-yellow {
+  border-color: var(--mondrian-yellow);
+}

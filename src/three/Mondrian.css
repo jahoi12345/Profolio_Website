@@ -1,0 +1,172 @@
+/* --- GLOBAL PALETTE --- */
+:root {
+    --m-red: #C62620;
+    --m-yellow: #F0C62D;
+    --m-blue: #204686;
+    --m-black: #111111;
+    --m-gray: #D9D9D9;
+    --m-bg: #EAEAE8; /* Authentic aged canvas white */
+    --line-thick: 16px; /* Adjust thickness here */
+  }
+  
+  /* The Canvas Frame */
+  .mondrian-canvas {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Or whatever size you prefer */
+    aspect-ratio: 1 / 1;
+    background-color: var(--m-bg);
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    margin: 0 auto;
+    overflow: hidden; /* Keeps lines clean at edges */
+  }
+  
+  /* --- SHARED STYLES --- */
+  .plane {
+    position: absolute;
+    z-index: 1; /* Below lines */
+  }
+  
+  .line {
+    position: absolute;
+    background-color: var(--m-black);
+    z-index: 2; /* Above colors */
+  }
+  
+  /* --- THE GRID (LINES) --- */
+  
+  /* Vertical Lines */
+  .v-left {
+    left: 14%;
+    top: 0; /* Extends to top edge in top left corner */
+    bottom: 18%; /* Stops at the bottom horizontal line */
+    width: var(--line-thick);
+  }
+  
+  .v-main {
+    left: 64%;
+    top: 0;
+    bottom: 0; /* Extends to bottom edge in bottom right corner */
+    width: var(--line-thick);
+  }
+  
+  .v-right {
+    left: 92%;
+    top: 0;
+    bottom: 0; /* Extends to bottom edge in bottom right corner */
+    width: var(--line-thick);
+  }
+  
+  .v-center-small {
+    left: 39%; /* Roughly middle of the area under red */
+    top: 64%;
+    height: 18%; /* Connects mid and bottom lines */
+    width: var(--line-thick);
+  }
+  
+  /* Horizontal Lines */
+  .h-top {
+    top: 14%;
+    left: 2%; /* Starts slightly in from left edge */
+    right: 2%; /* Stops slightly before right edge */
+    height: var(--line-thick);
+  }
+  
+  .h-mid {
+    top: 64%;
+    left: 14%; /* Starts at v-left */
+    right: 8%; /* Stops before the far right edge! Important detail */
+    height: var(--line-thick);
+  }
+  
+  .h-bottom {
+    top: 82%;
+    left: 2%; /* Starts slightly in from left edge */
+    right: 0; /* Extends to right edge in bottom right corner */
+    height: var(--line-thick);
+  }
+  
+  .h-far-left {
+    top: 64%; /* Aligned with h-mid but on the far left */
+    left: 0;
+    width: 14%;
+    height: var(--line-thick);
+    /* Note: In some versions this connects, in others it's broken. 
+       We map it as a separate segment for control. */
+  }
+  
+  
+  /* --- THE COLORS (PLANES) --- */
+  
+  /* 1. The Red Square */
+  .red-plane {
+    background-color: var(--m-red);
+    top: 14%;
+    left: 14%;
+    width: 50%; /* 64% - 14% */
+    height: 50%; /* 64% - 14% */
+  }
+  
+  /* 2. Yellow Top Right */
+  .yellow-plane-top {
+    background-color: var(--m-yellow);
+    top: 0;
+    right: 0;
+    left: 64%;
+    height: 35%; /* Extends down past the first line slightly in the painting */
+    /* Actually, looking at the image, it fills the quadrant defined by v-main and h-top 
+       but Mondrian often painted *over* grid lines. 
+       Here we fit it into the grid: top to h-top? No, it's large. */
+    height: 35%; 
+    /* Correction: In this specific painting, the yellow is bounded by v-main, v-right, and a phantom line.
+       Let's map it to the grid space: */
+    left: 64%;
+    width: 28%; /* up to v-right */
+    height: 30%; 
+  }
+  
+  /* 3. Yellow Bottom Left */
+  .yellow-plane-bottom {
+    background-color: var(--m-yellow);
+    bottom: 0;
+    left: 0;
+    width: 14%;
+    height: 18%; /* Below h-bottom */
+  }
+  
+  /* 4. Blue Bottom Right */
+  .blue-plane {
+    background-color: var(--m-blue);
+    bottom: 0;
+    left: 64%; /* v-main */
+    width: 28%; /* To v-right */
+    height: 18%; /* Below h-bottom */
+  }
+  
+  /* 5. Black Plane (Under Red) */
+  .black-plane {
+    background-color: var(--m-black);
+    top: 64%;
+    left: 14%;
+    width: 25%; /* To v-center-small */
+    height: 18%;
+  }
+  
+  /* 6. Gray Plane (Next to Black) */
+  .gray-plane {
+    background-color: var(--m-gray);
+    top: 64%;
+    left: 39%; /* v-center-small */
+    width: 25%; /* To v-main */
+    height: 18%;
+  }
+  
+  /* 7. Red Corner Strip */
+  .red-plane-corner {
+    background-color: var(--m-red);
+    bottom: 0;
+    right: 0;
+    width: 8%; /* Outside v-right */
+    height: 18%;
+  }
+
