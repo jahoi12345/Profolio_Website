@@ -15,7 +15,7 @@ const Experience = () => {
     <section
       id="experience"
       ref={ref}
-      className="min-h-screen py-20 px-10 max-w-[1600px] mx-auto"
+      className="pt-8 pb-20 px-10 max-w-[1600px] mx-auto"
     >
       <motion.h2
         initial={{ opacity: 0, y: 30 }}

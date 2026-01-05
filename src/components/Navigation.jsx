@@ -5,7 +5,7 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'experience', 'projects', 'contact'];
+      const sections = ['hero', 'about', 'projects', 'experience', 'skills', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -36,8 +36,9 @@ const Navigation = () => {
   const navItems = [
     { id: 'hero', label: 'Index' },
     { id: 'about', label: 'About' },
-    { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'skills', label: 'Skills' },
     { id: 'contact', label: 'Contact' },
   ];
 
