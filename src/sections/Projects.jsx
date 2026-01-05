@@ -12,7 +12,7 @@ const Projects = () => {
     <section
       id="projects"
       ref={ref}
-      className="min-h-screen py-20 px-10 max-w-[1600px] mx-auto"
+      className="pt-20 pb-8 px-10 max-w-[1600px] mx-auto"
     >
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
