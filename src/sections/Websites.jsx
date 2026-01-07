@@ -188,7 +188,7 @@ const Websites = () => {
   return (
     <section
       id="websites"
-      className="min-h-screen py-20 px-10 max-w-[1600px] mx-auto"
+      className="pt-10 pb-6 md:min-h-screen md:py-20 px-10 max-w-[1600px] mx-auto"
     >
       {/* Title and Subtitle - Centered on Top */}
       <div className="text-center mb-12">
@@ -201,9 +201,9 @@ const Websites = () => {
       </div>
 
       {/* Three.js Visual - Two Independent Containers */}
-      <div className="h-[600px] w-full flex">
+      <div className="h-[400px] md:h-[600px] w-full flex flex-col md:flex-row">
         {/* Left Container - LinkedIn Logo */}
-        <div className="w-1/2 h-full flex items-center justify-center">
+        <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center">
           <Canvas shadows gl={{ antialias: false }} camera={{ position: [0, 0, 50], fov: 35 }}>
             <color attach="background" args={['#0a0a0a']} />
             
@@ -245,7 +245,7 @@ const Websites = () => {
         </div>
 
         {/* Right Container - GitHub Logo */}
-        <div className="w-1/2 h-full flex items-center justify-center">
+        <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center">
           <Canvas shadows gl={{ antialias: false }} camera={{ position: [0, 0, 50], fov: 35 }}>
             <color attach="background" args={['#0a0a0a']} />
             

@@ -43,7 +43,7 @@ const Contact = () => {
     <section
       id="contact"
       ref={ref}
-      className="min-h-screen py-20 px-10 max-w-[1600px] mx-auto relative"
+      className="pt-6 pb-10 md:min-h-screen md:py-20 px-10 max-w-[1600px] mx-auto relative"
     >
       {/* Three.js Planet Background */}
       <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 opacity-20 pointer-events-none hidden md:block">

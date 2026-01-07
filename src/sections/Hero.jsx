@@ -67,8 +67,8 @@ const Hero = () => {
       </div>
 
       {/* Mondrian Composition - Right side */}
-      <div className="md:col-span-5 flex items-center justify-end relative z-10 h-full w-full overflow-visible">
-        <div className="w-[200%] h-full min-w-[800px] -ml-[50%]">
+      <div className="md:col-span-5 flex items-center justify-center md:justify-end relative z-10 h-full w-full overflow-hidden md:overflow-visible">
+        <div className="w-full md:w-[200%] h-[400px] md:h-full min-h-[400px] md:min-w-[800px] md:-ml-[50%]">
           <Suspense fallback={<div className="w-full h-full" />}>
             <Canvas shadows camera={{ position: [0, 0, 75], fov: 45 }}>
               <color attach="background" args={['#111111']} />
