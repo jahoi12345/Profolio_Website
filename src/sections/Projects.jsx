@@ -46,7 +46,8 @@ const Projects = () => {
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className={`w-full h-full ${project.id === 2 ? 'object-cover' : 'object-cover'}`}
+                    style={project.id === 2 ? { objectPosition: '45% center' } : {}}
                     loading="lazy"
                   />
                 ) : null}
