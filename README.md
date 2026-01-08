@@ -2,6 +2,8 @@
 
 A modern, interactive portfolio website built with React, Vite, and Three.js. Features smooth animations, 3D graphics, and a responsive design.
 
+**[View the live application →](https://jahoi12345.github.io/Profolio_Website/)**
+
 ## Features
 
 - **Interactive 3D Graphics**: Three.js powered particle logos and visual effects
