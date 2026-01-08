@@ -39,11 +39,11 @@ const Experience = () => {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="relative pl-0 md:pl-20"
             >
-              {/* Timeline Dot - Alternating Mondrian Colors */}
+              {/* Timeline Dot - Alternating Mondrian Colors (WCAG Accessible) */}
               <div 
                 className="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-4 border-bg hidden md:block z-10"
                 style={{ 
-                  backgroundColor: index % 3 === 0 ? '#0052FF' : index % 3 === 1 ? '#E60012' : '#FFEB00' 
+                  backgroundColor: index % 3 === 0 ? '#4A9CFF' : index % 3 === 1 ? '#FF5252' : '#FFEB00' 
                 }}
               />
 
@@ -58,7 +58,7 @@ const Experience = () => {
                     <p 
                       className="font-mono text-sm mb-2"
                       style={{ 
-                        color: index % 3 === 0 ? '#0052FF' : index % 3 === 1 ? '#E60012' : '#FFEB00' 
+                        color: index % 3 === 0 ? '#4A9CFF' : index % 3 === 1 ? '#FF5252' : '#FFEB00' 
                       }}
                     >
                       {exp.company}
@@ -73,7 +73,7 @@ const Experience = () => {
                     whileTap={{ scale: 0.95 }}
                     className="mt-4 md:mt-0 font-mono text-xs uppercase tracking-wider"
                     style={{ 
-                      color: index % 3 === 0 ? '#0052FF' : index % 3 === 1 ? '#E60012' : '#FFEB00' 
+                      color: index % 3 === 0 ? '#4A9CFF' : index % 3 === 1 ? '#FF5252' : '#FFEB00' 
                     }}
                   >
                     {expandedId === exp.id ? 'LESS' : 'MORE'}
@@ -106,7 +106,7 @@ const Experience = () => {
                         <h4 
                           className="font-mono text-sm mb-3 uppercase tracking-wider"
                           style={{ 
-                            color: index % 3 === 0 ? '#0052FF' : index % 3 === 1 ? '#E60012' : '#FFEB00' 
+                            color: index % 3 === 0 ? '#4A9CFF' : index % 3 === 1 ? '#FF5252' : '#FFEB00' 
                           }}
                         >
                           Key Achievements
@@ -117,7 +117,7 @@ const Experience = () => {
                               <span 
                                 className="mr-2"
                                 style={{ 
-                                  color: index % 3 === 0 ? '#0052FF' : index % 3 === 1 ? '#E60012' : '#FFEB00' 
+                                  color: index % 3 === 0 ? '#4A9CFF' : index % 3 === 1 ? '#FF5252' : '#FFEB00' 
                                 }}
                               >
                                 ▸

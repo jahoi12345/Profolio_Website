@@ -13,11 +13,16 @@ import Contact from './sections/Contact';
 function App() {
   return (
     <>
+      {/* Skip link for keyboard accessibility */}
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+      
       <CustomCursor />
       <GrainOverlay />
       <Navigation />
       
-      <main>
+      <main id="main-content" tabIndex="-1">
         <Hero />
         <About />
         <Projects />

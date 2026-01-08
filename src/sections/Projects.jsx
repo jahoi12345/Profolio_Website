@@ -156,14 +156,14 @@ const Projects = () => {
                     key={tech}
                     className="px-3 py-1 text-sm font-mono border"
                     style={{ 
-                      borderColor: selectedProject.id % 5 === 0 ? '#0052FF' : 
-                      selectedProject.id % 5 === 1 ? '#E60012' : 
+                      borderColor: selectedProject.id % 5 === 0 ? '#4A9CFF' : 
+                      selectedProject.id % 5 === 1 ? '#FF5252' : 
                       selectedProject.id % 5 === 2 ? '#FFEB00' :
-                      selectedProject.id % 5 === 3 ? '#0052FF' : '#E60012',
-                      color: selectedProject.id % 5 === 0 ? '#0052FF' : 
-                      selectedProject.id % 5 === 1 ? '#E60012' : 
+                      selectedProject.id % 5 === 3 ? '#4A9CFF' : '#FF5252',
+                      color: selectedProject.id % 5 === 0 ? '#4A9CFF' : 
+                      selectedProject.id % 5 === 1 ? '#FF5252' : 
                       selectedProject.id % 5 === 2 ? '#FFEB00' :
-                      selectedProject.id % 5 === 3 ? '#0052FF' : '#E60012'
+                      selectedProject.id % 5 === 3 ? '#4A9CFF' : '#FF5252'
                     }}
                   >
                     {tech}
