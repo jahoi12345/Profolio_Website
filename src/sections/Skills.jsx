@@ -31,7 +31,7 @@ const Skills = () => {
             <h4 
               className="font-mono text-sm mb-4 uppercase tracking-wider"
               style={{ 
-                color: categoryIndex % 3 === 0 ? '#0052FF' : categoryIndex % 3 === 1 ? '#E60012' : '#FFEB00' 
+                color: categoryIndex % 3 === 0 ? '#4A9CFF' : categoryIndex % 3 === 1 ? '#FF5252' : '#FFEB00' 
               }}
             >
               {category.category}
@@ -48,8 +48,8 @@ const Skills = () => {
                   }}
                   className="px-3 py-1.5 text-xs font-mono border transition-colors hover:scale-105"
                   style={{ 
-                    borderColor: skillIndex % 3 === 0 ? '#0052FF' : skillIndex % 3 === 1 ? '#E60012' : '#FFEB00',
-                    color: skillIndex % 3 === 0 ? '#0052FF' : skillIndex % 3 === 1 ? '#E60012' : '#FFEB00'
+                    borderColor: skillIndex % 3 === 0 ? '#4A9CFF' : skillIndex % 3 === 1 ? '#FF5252' : '#FFEB00',
+                    color: skillIndex % 3 === 0 ? '#4A9CFF' : skillIndex % 3 === 1 ? '#FF5252' : '#FFEB00'
                   }}
                 >
                   {skill}

@@ -9,10 +9,13 @@
   --slab-surface: #111111;
   --slab-edge: rgba(255, 255, 255, 0.12);
   
-  /* Mondrian Primary Colors */
-  --mondrian-red: #E60012;
-  --mondrian-blue: #0052FF;
-  --mondrian-yellow: #FFEB00;
+  /* 
+   * WCAG Accessible Mondrian Primary Colors
+   * All colors meet WCAG AA (4.5:1) or AAA (7:1) contrast against --bg (#0a0a0a)
+   */
+  --mondrian-red: #FF5252;      /* Contrast: 6.2:1 - Passes AA & AAA for large text */
+  --mondrian-blue: #4A9CFF;     /* Contrast: 7.2:1 - Passes AAA */
+  --mondrian-yellow: #FFEB00;   /* Contrast: 16.1:1 - Passes AAA */
   --mondrian-black: #000000;
   --mondrian-white: #FFFFFF;
   
@@ -21,11 +24,14 @@
   --accent-red: var(--mondrian-red);
   --accent-yellow: var(--mondrian-yellow);
   
-  --text-main: #e8e8e8;
-  --text-dim: #888;
+  --text-main: #e8e8e8;         /* Contrast: 16.1:1 - Passes AAA */
+  --text-dim: #A3A3A3;          /* Contrast: 7.8:1 - Passes AAA */
   --font-sans: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --shadow-sharp: 20px 20px 60px #000000, -5px -5px 20px rgba(255,255,255,0.03);
+  
+  /* Focus ring color for keyboard accessibility */
+  --focus-ring: var(--mondrian-yellow);
 }
 
 * {
@@ -137,4 +143,72 @@ html {
 
 .slab-accent-yellow {
   border-color: var(--mondrian-yellow);
+}
+
+/* =============================================
+   ACCESSIBILITY: Focus Styles
+   These provide visible focus indicators for keyboard navigation
+   ============================================= */
+
+/* Focus ring for all interactive elements */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Focus style for navigation links */
+nav a:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* Focus style for cards/slabs when they are interactive */
+.slab:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Skip link for keyboard users - hidden until focused */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--mondrian-yellow);
+  color: var(--bg);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  z-index: 9999;
+  text-decoration: none;
+  border-radius: 0 0 4px 4px;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Ensure sufficient touch target sizes (48x48px minimum for WCAG) */
+@media (pointer: coarse) {
+  a, button, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

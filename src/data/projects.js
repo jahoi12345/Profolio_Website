@@ -18,5 +18,25 @@ export const projects = [
     reportUrl: `${import.meta.env.BASE_URL}Project_Report.html`,
     featured: false,
   },
+  {
+    id: 3,
+    title: 'World Birth Rate Visualization',
+    description: 'Interactive global visualization exploring birth rate trends and demographic patterns across countries and regions.',
+    image: `${import.meta.env.BASE_URL}world-birth-rate-visualization.png`,
+    technologies: ['JavaScript', 'D3.js', 'Data Visualization', 'Web Development'],
+    liveUrl: 'https://jahoi12345.github.io/World-Birth-Rate-Visualization/',
+    githubUrl: 'https://github.com/jahoi12345/World-Birth-Rate-Visualization',
+    featured: false,
+  },
+  {
+    id: 4,
+    title: 'Data Visualization Tools',
+    description: 'An interactive dashboard comparing the growth and adoption of popular data visualization libraries and BI tools from 2003 to 2025.',
+    image: `${import.meta.env.BASE_URL}data-visualization-tools.png`,
+    technologies: ['JavaScript', 'Plotly.js', 'HTML/CSS', 'Python', 'Data Analysis'],
+    liveUrl: 'https://jahoi12345.github.io/Data-Visualization-Tools/',
+    githubUrl: 'https://github.com/jahoi12345/Data-Visualization-Tools',
+    featured: false,
+  },
 ];
 
