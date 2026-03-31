@@ -38,5 +38,15 @@ export const projects = [
     githubUrl: 'https://github.com/jahoi12345/Data-Visualization-Tools',
     featured: false,
   },
+  {
+    id: 5,
+    title: 'NBA Shot Vision',
+    description:
+      'Statistical analysis of NBA shot outcomes: modeling field goal success from shot characteristics and game context using regression and model comparison (STAT 3032).',
+    image: `${import.meta.env.BASE_URL}nba-shot-vision.png`,
+    technologies: ['R', 'Quarto', 'Regression', 'Statistical Modeling', 'Data Analysis'],
+    reportUrl: `${import.meta.env.BASE_URL}nba-shot-vision-report.html`,
+    featured: false,
+  },
 ];
 
