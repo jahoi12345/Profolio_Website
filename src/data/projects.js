@@ -48,5 +48,16 @@ export const projects = [
     reportUrl: `${import.meta.env.BASE_URL}nba-shot-vision-report.html`,
     featured: false,
   },
+  {
+    id: 6,
+    title: 'AMBER',
+    description:
+      'A React app for the AMBER project: user and family views with time landscapes, messages, and demo data, built from a Figma design with a switch-person flow for testing.',
+    image: `${import.meta.env.BASE_URL}amber-app.jpg`,
+    technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'React Router'],
+    liveUrl: 'https://jahoi12345.github.io/AMBER-App/',
+    githubUrl: 'https://github.com/jahoi12345/AMBER-App',
+    featured: false,
+  },
 ];
 
