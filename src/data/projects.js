@@ -59,5 +59,15 @@ export const projects = [
     githubUrl: 'https://github.com/jahoi12345/AMBER-App',
     featured: false,
   },
+  {
+    id: 7,
+    title: 'Chicago Transit Time Cartogram',
+    description:
+      'Interactive map that warps Chicago by real commute time instead of physical distance, built on a live multimodal routing graph over CTA, Metra, and Pace GTFS data -- with heatmaps, an isochrone time-budget scrubber, and side-by-side origin comparison.',
+    technologies: ['JavaScript', 'Canvas API', 'Python', 'GTFS', 'Cloudflare Workers'],
+    liveUrl: 'https://jahoi12345.github.io/chicago-cartogram/',
+    githubUrl: 'https://github.com/jahoi12345/chicago-cartogram',
+    featured: false,
+  },
 ];
 

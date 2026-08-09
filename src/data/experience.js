@@ -1,5 +1,15 @@
 export const experience = [
   {
+    id: 5,
+    company: 'Walmart',
+    role: 'Automation Engineer',
+    period: 'Jun – Aug 2026',
+    location: 'Bentonville, AR',
+    description: 'Automation engineering role at Walmart’s global headquarters in Bentonville, Arkansas.',
+    technologies: [],
+    achievements: [],
+  },
+  {
     id: 1,
     company: 'Outside VC',
     role: 'Automation Engineering Intern',
