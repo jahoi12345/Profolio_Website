@@ -2,10 +2,10 @@ export const experience = [
   {
     id: 5,
     company: 'Walmart',
-    role: 'Automation Engineer',
+    role: 'Automated Pickup and Delivery Data Engineering Intern',
     period: 'Jun – Aug 2026',
     location: 'Bentonville, AR',
-    description: 'Automation engineering role at Walmart’s global headquarters in Bentonville, Arkansas.',
+    description: 'Data engineering role within Walmart’s Automated Pickup and Delivery team at the company’s global headquarters in Bentonville, Arkansas.',
     technologies: [],
     achievements: [],
   },
