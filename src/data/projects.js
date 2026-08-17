@@ -70,5 +70,16 @@ export const projects = [
     githubUrl: 'https://github.com/jahoi12345/chicago-cartogram',
     featured: false,
   },
+  {
+    id: 8,
+    title: 'Unwatched',
+    description:
+      'An anti-surveillance directory and toolkit: a curated list of ALPR-avoidance and privacy tools, plus original tools that scrape municipal records for surveillance-tech procurement, parse FOIA responses for compliance issues, and route synthetic traffic over real streets against real, OpenStreetMap-sourced ALPR camera locations to quantify blanket-surveillance exposure.',
+    image: `${import.meta.env.BASE_URL}unwatched.png`,
+    technologies: ['React', 'TypeScript', 'Vite', 'Node.js', 'SQLite', 'Leaflet', 'GitHub Actions'],
+    liveUrl: 'https://jahoi12345.github.io/unwatched/',
+    githubUrl: 'https://github.com/jahoi12345/unwatched',
+    featured: false,
+  },
 ];
 
