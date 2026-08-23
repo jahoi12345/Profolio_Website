@@ -1,5 +1,27 @@
 export const projects = [
   {
+    id: 7,
+    title: 'Chicago Transit Time Cartogram',
+    description:
+      'Interactive map that warps Chicago by real commute time instead of physical distance, built on a live multimodal routing graph over CTA, Metra, and Pace GTFS data -- with heatmaps, an isochrone time-budget scrubber, and side-by-side origin comparison.',
+    image: `${import.meta.env.BASE_URL}chicago-cartogram.png`,
+    technologies: ['JavaScript', 'Canvas API', 'Python', 'GTFS', 'Cloudflare Workers'],
+    liveUrl: 'https://jahoi12345.github.io/chicago-cartogram/',
+    githubUrl: 'https://github.com/jahoi12345/chicago-cartogram',
+    featured: true,
+  },
+  {
+    id: 9,
+    title: 'Cars & Bids Auction Modeling',
+    description:
+      'A full-stack auction tracker and ML price-projection research pipeline for Cars & Bids: a Playwright scraper feeding a live-tracking dashboard, and a 10-model backtesting pipeline (gradient-boosted trees, quantile regression, CatBoost, an ensemble) validated via leave-one-auction-out and rolling-origin time-holdout cross-validation, feature ablation, and hyperparameter search.',
+    image: `${import.meta.env.BASE_URL}cars-and-bids-auction-tracker.png`,
+    technologies: ['TypeScript', 'React', 'Bun', 'Python', 'scikit-learn', 'Playwright', 'SQLite'],
+    liveUrl: 'https://jahoi12345.github.io/CarsandBidsAuctionModeling-Research/',
+    githubUrl: 'https://github.com/jahoi12345/CarsandBidsAuctionModeling-Research',
+    featured: true,
+  },
+  {
     id: 1,
     title: 'NBA Data Visualization',
     description: 'Interactive data visualization project exploring NBA statistics and player performance metrics with dynamic charts and insights.',
@@ -60,17 +82,6 @@ export const projects = [
     featured: false,
   },
   {
-    id: 7,
-    title: 'Chicago Transit Time Cartogram',
-    description:
-      'Interactive map that warps Chicago by real commute time instead of physical distance, built on a live multimodal routing graph over CTA, Metra, and Pace GTFS data -- with heatmaps, an isochrone time-budget scrubber, and side-by-side origin comparison.',
-    image: `${import.meta.env.BASE_URL}chicago-cartogram.png`,
-    technologies: ['JavaScript', 'Canvas API', 'Python', 'GTFS', 'Cloudflare Workers'],
-    liveUrl: 'https://jahoi12345.github.io/chicago-cartogram/',
-    githubUrl: 'https://github.com/jahoi12345/chicago-cartogram',
-    featured: false,
-  },
-  {
     id: 8,
     title: 'Unwatched',
     description:
@@ -81,16 +92,4 @@ export const projects = [
     githubUrl: 'https://github.com/jahoi12345/unwatched',
     featured: false,
   },
-  {
-    id: 9,
-    title: 'Cars & Bids Auction Modeling',
-    description:
-      'A full-stack auction tracker and ML price-projection research pipeline for Cars & Bids: a Playwright scraper feeding a live-tracking dashboard, and a 10-model backtesting pipeline (gradient-boosted trees, quantile regression, CatBoost, an ensemble) validated via leave-one-auction-out and rolling-origin time-holdout cross-validation, feature ablation, and hyperparameter search.',
-    image: `${import.meta.env.BASE_URL}cars-and-bids-auction-tracker.png`,
-    technologies: ['TypeScript', 'React', 'Bun', 'Python', 'scikit-learn', 'Playwright', 'SQLite'],
-    liveUrl: 'https://jahoi12345.github.io/CarsandBidsAuctionModeling-Research/',
-    githubUrl: 'https://github.com/jahoi12345/CarsandBidsAuctionModeling-Research',
-    featured: false,
-  },
 ];
-
