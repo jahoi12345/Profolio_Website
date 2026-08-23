@@ -81,5 +81,16 @@ export const projects = [
     githubUrl: 'https://github.com/jahoi12345/unwatched',
     featured: false,
   },
+  {
+    id: 9,
+    title: 'Cars & Bids Auction Modeling',
+    description:
+      'A full-stack auction tracker and ML price-projection research pipeline for Cars & Bids: a Playwright scraper feeding a live-tracking dashboard, and a 10-model backtesting pipeline (gradient-boosted trees, quantile regression, CatBoost, an ensemble) validated via leave-one-auction-out and rolling-origin time-holdout cross-validation, feature ablation, and hyperparameter search.',
+    image: `${import.meta.env.BASE_URL}cars-and-bids-auction-tracker.png`,
+    technologies: ['TypeScript', 'React', 'Bun', 'Python', 'scikit-learn', 'Playwright', 'SQLite'],
+    liveUrl: 'https://jahoi12345.github.io/CarsandBidsAuctionModeling-Research/',
+    githubUrl: 'https://github.com/jahoi12345/CarsandBidsAuctionModeling-Research',
+    featured: false,
+  },
 ];
 
