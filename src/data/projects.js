@@ -41,6 +41,17 @@ export const projects = [
     featured: false,
   },
   {
+    id: 10,
+    title: 'Camera Placement and Latino Population Share',
+    description:
+      'A fifteen-city econometric analysis of Flock/ALPR camera siting: negative-binomial regression, spatial and attenuation-bias correction, a race/class horse race, and a Bayesian hierarchical model testing whether camera density tracks Latino population share.',
+    image: `${import.meta.env.BASE_URL}flock-latino-report.png`,
+    technologies: ['Python', 'Econometrics', 'PyMC', 'Bayesian Statistics', 'GeoPandas', 'Statistical Modeling'],
+    reportUrl: 'https://jahoi12345.github.io/unwatched/flock-latino-report.html',
+    githubUrl: 'https://github.com/jahoi12345/unwatched/tree/main/analysis/latino-exposure',
+    featured: false,
+  },
+  {
     id: 3,
     title: 'World Birth Rate Visualization',
     description: 'Interactive global visualization exploring birth rate trends and demographic patterns across countries and regions.',
