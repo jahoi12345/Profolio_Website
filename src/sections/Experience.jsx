@@ -15,13 +15,13 @@ const Experience = () => {
     <section
       id="experience"
       ref={ref}
-      className="pt-8 pb-20 px-10 max-w-[1600px] mx-auto"
+      className="pt-8 pb-16 px-6 md:px-10 max-w-[1600px] mx-auto"
     >
       <motion.h2
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8 }}
-        className="text-4xl font-extrabold mb-16 text-center"
+        transition={{ duration: 0.6 }}
+        className="text-2xl md:text-3xl font-extrabold mb-10"
       >
         Experience
       </motion.h2>
@@ -30,37 +30,27 @@ const Experience = () => {
         {/* Timeline Line */}
         <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-slab-edge hidden md:block" />
 
-        <div className="space-y-12">
+        <div className="space-y-8">
           {experience.map((exp, index) => (
             <motion.div
               key={exp.id}
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -30 }}
               animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative pl-0 md:pl-20"
             >
-              {/* Timeline Dot - Alternating Mondrian Colors (WCAG Accessible) */}
-              <div 
-                className="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-4 border-bg hidden md:block z-10"
-                style={{ 
-                  backgroundColor: index % 3 === 0 ? '#4A9CFF' : index % 3 === 1 ? '#FF5252' : '#FFEB00' 
-                }}
-              />
+              {/* Timeline Dot */}
+              <div className="absolute left-6 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full border-2 border-bg bg-mondrian-yellow hidden md:block z-10" />
 
               <motion.div
-                whileHover={{ y: -5, scale: 1.01 }}
-                className="slab p-8 cursor-pointer"
+                whileHover={{ y: -3 }}
+                className="slab p-6 md:p-8 cursor-pointer"
                 onClick={() => toggleExpand(exp.id)}
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                   <div>
-                    <h3 className="text-2xl font-bold mb-2">{exp.role}</h3>
-                    <p 
-                      className="font-mono text-sm mb-2"
-                      style={{ 
-                        color: index % 3 === 0 ? '#4A9CFF' : index % 3 === 1 ? '#FF5252' : '#FFEB00' 
-                      }}
-                    >
+                    <h3 className="text-xl font-bold mb-2">{exp.role}</h3>
+                    <p className="font-mono text-sm mb-2 text-mondrian-yellow">
                       {exp.company}
                     </p>
                     <p className="text-text-dim text-sm">{exp.period}</p>
@@ -69,12 +59,9 @@ const Experience = () => {
                     )}
                   </div>
                   <motion.button
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="mt-4 md:mt-0 font-mono text-xs uppercase tracking-wider"
-                    style={{ 
-                      color: index % 3 === 0 ? '#4A9CFF' : index % 3 === 1 ? '#FF5252' : '#FFEB00' 
-                    }}
+                    className="mt-4 md:mt-0 font-mono text-xs uppercase tracking-wider text-mondrian-yellow"
                   >
                     {expandedId === exp.id ? 'LESS' : 'MORE'}
                   </motion.button>
@@ -103,25 +90,13 @@ const Experience = () => {
                       className="overflow-hidden"
                     >
                       <div className="pt-4 border-t border-slab-edge">
-                        <h4 
-                          className="font-mono text-sm mb-3 uppercase tracking-wider"
-                          style={{ 
-                            color: index % 3 === 0 ? '#4A9CFF' : index % 3 === 1 ? '#FF5252' : '#FFEB00' 
-                          }}
-                        >
+                        <h4 className="font-mono text-sm mb-3 uppercase tracking-wider text-mondrian-yellow">
                           Key Achievements
                         </h4>
                         <ul className="space-y-2">
                           {exp.achievements.map((achievement, i) => (
                             <li key={i} className="text-text-dim flex items-start">
-                              <span 
-                                className="mr-2"
-                                style={{ 
-                                  color: index % 3 === 0 ? '#4A9CFF' : index % 3 === 1 ? '#FF5252' : '#FFEB00' 
-                                }}
-                              >
-                                ▸
-                              </span>
+                              <span className="mr-2 text-mondrian-yellow">▸</span>
                               {achievement}
                             </li>
                           ))}

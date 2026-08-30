@@ -188,14 +188,11 @@ const Websites = () => {
   return (
     <section
       id="websites"
-      className="pt-10 pb-6 md:min-h-screen md:py-20 px-10 max-w-[1600px] mx-auto"
+      className="pt-8 pb-6 md:py-16 px-6 md:px-10 max-w-[1600px] mx-auto"
     >
-      {/* Title and Subtitle - Centered on Top */}
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-extrabold mb-4">
-          Websites
-        </h2>
-        <p className="text-text-dim text-lg">
+      <div className="mb-8">
+        <h2 className="text-2xl md:text-3xl font-extrabold mb-3">Websites</h2>
+        <p className="text-text-dim">
           Interactive web experiences built with modern technologies and creative design.
         </p>
       </div>

@@ -9,13 +9,13 @@ const Skills = () => {
     <section
       id="skills"
       ref={ref}
-      className="pt-8 pb-20 px-10 max-w-[1600px] mx-auto"
+      className="pt-8 pb-16 px-6 md:px-10 max-w-[1600px] mx-auto"
     >
       <motion.h2
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8 }}
-        className="text-4xl font-extrabold mb-10 text-center"
+        transition={{ duration: 0.6 }}
+        className="text-2xl md:text-3xl font-extrabold mb-8"
       >
         Skills
       </motion.h2>
@@ -23,37 +23,22 @@ const Skills = () => {
         {skills.map((category, categoryIndex) => (
           <motion.div
             key={category.category}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+            transition={{ duration: 0.5, delay: categoryIndex * 0.06 }}
             className="slab p-6"
           >
-            <h4 
-              className="font-mono text-sm mb-4 uppercase tracking-wider"
-              style={{ 
-                color: categoryIndex % 3 === 0 ? '#4A9CFF' : categoryIndex % 3 === 1 ? '#FF5252' : '#FFEB00' 
-              }}
-            >
+            <h4 className="font-mono text-sm mb-4 uppercase tracking-wider text-mondrian-yellow">
               {category.category}
             </h4>
             <div className="flex flex-wrap gap-2">
-              {category.items.map((skill, skillIndex) => (
-                <motion.span
+              {category.items.map((skill) => (
+                <span
                   key={skill}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ 
-                    duration: 0.3, 
-                    delay: 0.2 + categoryIndex * 0.1 + skillIndex * 0.03 
-                  }}
-                  className="px-3 py-1.5 text-xs font-mono border transition-colors hover:scale-105"
-                  style={{ 
-                    borderColor: skillIndex % 3 === 0 ? '#4A9CFF' : skillIndex % 3 === 1 ? '#FF5252' : '#FFEB00',
-                    color: skillIndex % 3 === 0 ? '#4A9CFF' : skillIndex % 3 === 1 ? '#FF5252' : '#FFEB00'
-                  }}
+                  className="px-3 py-1.5 text-xs font-mono border border-slab-edge text-text-dim hover:border-mondrian-yellow hover:text-mondrian-yellow transition-colors"
                 >
                   {skill}
-                </motion.span>
+                </span>
               ))}
             </div>
           </motion.div>
@@ -64,5 +49,3 @@ const Skills = () => {
 };
 
 export default Skills;
-
-

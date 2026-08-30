@@ -4,7 +4,7 @@ const Navigation = () => {
   const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
-    const sections = ['hero', 'about', 'projects', 'experience', 'skills', 'websites', 'contact'];
+    const sections = ['hero', 'projects', 'about', 'experience', 'skills', 'websites', 'contact'];
     const isMobile = window.innerWidth < 768;
     
     // Responsive threshold: smaller on mobile, larger on desktop
@@ -138,8 +138,8 @@ const Navigation = () => {
 
   const navItems = [
     { id: 'hero', label: 'Index' },
-    { id: 'about', label: 'About' },
     { id: 'projects', label: 'Projects' },
+    { id: 'about', label: 'About' },
     { id: 'experience', label: 'Experience' },
     { id: 'skills', label: 'Skills' },
     { id: 'websites', label: 'Websites' },
@@ -147,8 +147,8 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-2 md:top-10 right-2 md:right-10 z-[100] font-mono text-[10px] md:text-xs uppercase tracking-widest max-w-[calc(100vw-1rem)]">
-      <ul className="flex flex-wrap gap-1.5 md:gap-8 justify-end">
+    <nav className="fixed top-2 md:top-8 right-2 md:right-10 z-[100] font-mono text-[10px] md:text-xs uppercase tracking-widest max-w-[calc(100vw-1rem)]">
+      <ul className="flex flex-wrap gap-1.5 md:gap-6 justify-end">
         {navItems.map((item) => (
           <li key={item.id}>
             <a

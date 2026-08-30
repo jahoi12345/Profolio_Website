@@ -1,19 +1,5 @@
-import { Suspense } from 'react';
 import { motion } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { Stars, OrbitControls } from '@react-three/drei';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import Mondrian from '../three/MondrianComposition';
-
-const ParticleScene = () => {
-  return (
-    <>
-      <Stars radius={300} depth={50} count={5000} factor={4} fade speed={1} />
-      <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
-      <ambientLight intensity={0.5} />
-    </>
-  );
-};
 
 const Hero = () => {
   const [ref, isVisible] = useScrollAnimation({ threshold: 0.2, once: true });
@@ -22,96 +8,42 @@ const Hero = () => {
     <section
       id="hero"
       ref={ref}
-      className="slab min-h-screen grid grid-cols-1 md:grid-cols-12 gap-5 p-6 md:p-10 max-w-[1600px] mx-auto relative"
+      className="min-h-[70vh] md:min-h-[80vh] flex flex-col justify-center px-6 md:px-10 max-w-[1600px] mx-auto pt-24 pb-10"
     >
-      {/* Background 3D Scene */}
-      <div className="absolute inset-0 opacity-30">
-        <Suspense fallback={<div className="w-full h-full bg-gradient-to-br from-accent/10 to-transparent" />}>
-          <Canvas camera={{ position: [0, 0, 5] }} gl={{ antialias: true }}>
-            <ParticleScene />
-          </Canvas>
-        </Suspense>
-      </div>
-
-      {/* Content */}
-      <div className="md:col-span-7 flex flex-col justify-end pb-20 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-mono text-mondrian-blue text-sm mb-2"
-        >
-          /// DATA SCIENCE & ECONOMICS & FILM
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-[clamp(3rem,8vw,6rem)] font-extrabold leading-[0.9] tracking-[-0.04em] mb-5"
-        >
-          JAMES
-          <br />
-          LI
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-text-dim text-lg max-w-2xl"
-        >
-          Transforming data into insights through statistical analysis, 
-          economic modeling, and interactive visualizations that tell compelling stories.
-        </motion.p>
-      </div>
-
-      {/* Mondrian Composition - Right side */}
-      <div className="md:col-span-5 flex items-center justify-center md:justify-end relative z-10 h-full w-full overflow-hidden md:overflow-visible">
-        <div className="w-full md:w-[200%] h-[400px] md:h-full min-h-[400px] md:min-w-[800px] md:-ml-[50%]">
-          <Suspense fallback={<div className="w-full h-full" />}>
-            <Canvas shadows camera={{ position: [0, 0, 75], fov: 45 }}>
-              <color attach="background" args={['#111111']} />
-              
-              {/* Lights setup to emphasize depth differences */}
-              <ambientLight intensity={1.4} />
-              <spotLight position={[10, 10, 10]} angle={0.3} penumbra={1} intensity={2.5} castShadow />
-              <pointLight position={[-10, -10, 10]} intensity={1.7} />
-              
-              <Mondrian />
-              
-              <OrbitControls 
-                enableZoom={false} 
-                enablePan={false}
-                minDistance={75}
-                maxDistance={75}
-              />
-            </Canvas>
-          </Suspense>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={isVisible ? { opacity: 1 } : {}}
-        transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10"
+        initial={{ opacity: 0, y: 20 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6 }}
+        className="font-mono text-mondrian-yellow text-xs md:text-sm tracking-[0.2em] mb-4"
       >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 border-2 rounded-full flex items-center justify-center"
-          style={{ borderColor: '#FFEB00' }}
-        >
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-2 h-2 rounded-full"
-            style={{ backgroundColor: '#FFEB00' }}
-          />
-        </motion.div>
+        DATA SCIENCE / ECONOMICS / FILM
       </motion.div>
+
+      <motion.h1
+        initial={{ opacity: 0, y: 20 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="text-[clamp(2.75rem,9vw,6.5rem)] font-extrabold leading-[0.95] tracking-[-0.03em]"
+      >
+        James Li
+      </motion.h1>
+
+      <motion.hr
+        initial={{ opacity: 0, width: 0 }}
+        animate={isVisible ? { opacity: 1, width: 64 } : {}}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="accent-rule my-6"
+      />
+
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.35 }}
+        className="text-text-dim text-base md:text-lg max-w-xl leading-relaxed"
+      >
+        Hi, glad you're here. This is a collection of the data, econ, and
+        creative-coding projects I've built in my free time and at work.
+      </motion.p>
     </section>
   );
 };
