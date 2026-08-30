@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { projects } from '../data/projects';
@@ -7,83 +7,95 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 const Projects = () => {
   const [ref, isVisible] = useScrollAnimation({ threshold: 0.1, once: true });
   const [selectedProject, setSelectedProject] = useState(null);
+  const [activeCategory, setActiveCategory] = useState('All');
+
+  const categories = useMemo(
+    () => ['All', ...new Set(projects.map((p) => p.category).filter(Boolean))],
+    []
+  );
+
+  const visibleProjects = useMemo(
+    () =>
+      activeCategory === 'All'
+        ? projects
+        : projects.filter((p) => p.category === activeCategory),
+    [activeCategory]
+  );
 
   return (
     <section
       id="projects"
       ref={ref}
-      className="pt-20 pb-8 px-10 max-w-[1600px] mx-auto"
+      className="pt-10 pb-20 px-6 md:px-10 max-w-[1600px] mx-auto"
     >
       <motion.h2
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8 }}
-        className="text-4xl font-extrabold mb-12 text-center"
+        transition={{ duration: 0.6 }}
+        className="text-2xl md:text-3xl font-extrabold mb-6"
       >
         Projects
       </motion.h2>
 
-      {/* Projects Grid */}
+      {/* Category Filter Bar */}
       <motion.div
-        layout
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        initial={{ opacity: 0, y: 10 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="flex flex-wrap gap-2 mb-10"
       >
-        <AnimatePresence mode="wait">
-          {projects.map((project, index) => (
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => setActiveCategory(category)}
+            className={`filter-pill ${activeCategory === category ? 'active' : ''}`}
+          >
+            {category}
+          </button>
+        ))}
+      </motion.div>
+
+      {/* Projects Grid */}
+      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <AnimatePresence mode="popLayout">
+          {visibleProjects.map((project) => (
             <motion.div
               key={project.id}
               layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              whileHover={{ y: -5, scale: 1.02 }}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 12 }}
+              transition={{ duration: 0.3 }}
+              whileHover={{ y: -3 }}
               className="slab overflow-hidden cursor-pointer group"
               onClick={() => setSelectedProject(project)}
             >
-              <div className="relative h-48 overflow-hidden">
-                {project.image && project.image !== '/api/placeholder/600/400' ? (
-                  <img 
-                    src={project.image} 
+              <div className="relative h-44 overflow-hidden bg-slab-surface">
+                {project.image && (
+                  <img
+                    src={project.image}
                     alt={project.title}
-                    className={`w-full h-full ${project.id === 2 ? 'object-cover' : 'object-cover'}`}
+                    className="w-full h-full object-cover grayscale-[35%] group-hover:grayscale-0 transition-all duration-300"
                     style={project.id === 2 ? { objectPosition: '45% center' } : {}}
                     loading="lazy"
                   />
-                ) : null}
-                <motion.div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
-                  style={{
-                    backgroundColor: project.id % 5 === 0 ? 'rgba(0, 82, 255, 0.1)' : 
-                    project.id % 5 === 1 ? 'rgba(230, 0, 18, 0.1)' : 
-                    project.id % 5 === 2 ? 'rgba(255, 235, 0, 0.1)' :
-                    project.id % 5 === 3 ? 'rgba(255, 235, 0, 0.08)' : 'rgba(0, 82, 255, 0.08)'
-                  }}
-                  whileHover={{ opacity: 1 }}
-                />
+                )}
               </div>
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-2">
-                  <h3 className="text-xl font-bold">{project.title}</h3>
+              <div className="p-5">
+                <div className="flex items-start justify-between gap-2 mb-1">
+                  <h3 className="text-base font-bold leading-snug">{project.title}</h3>
                   {project.featured && (
-                    <span className="text-xs font-mono text-mondrian-red border border-mondrian-red px-2 py-1">
+                    <span className="shrink-0 text-[10px] font-mono text-mondrian-yellow tracking-wider mt-1">
                       FEATURED
                     </span>
                   )}
                 </div>
-                <p className="text-text-dim text-sm mb-4 line-clamp-2">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.slice(0, 3).map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-xs font-mono text-text-dim border border-text-dim px-2 py-1"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                {project.category && (
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-text-dim mb-3">
+                    {project.category}
+                  </p>
+                )}
+                <p className="text-text-dim text-sm mb-4 line-clamp-2">{project.description}</p>
                 <div className="flex gap-4">
                   {project.githubUrl && (
                     <a
@@ -91,31 +103,20 @@ const Projects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="text-mondrian-blue hover:text-mondrian-blue/80 transition-colors"
+                      className="text-text-dim hover:text-mondrian-yellow transition-colors"
                     >
-                      <FaGithub size={20} />
+                      <FaGithub size={16} />
                     </a>
                   )}
-                  {project.liveUrl && (
+                  {(project.liveUrl || project.reportUrl) && (
                     <a
-                      href={project.liveUrl}
+                      href={project.liveUrl || project.reportUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="text-mondrian-blue hover:text-mondrian-blue/80 transition-colors"
+                      className="text-text-dim hover:text-mondrian-yellow transition-colors"
                     >
-                      <FaExternalLinkAlt size={20} />
-                    </a>
-                  )}
-                  {project.reportUrl && (
-                    <a
-                      href={project.reportUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="text-mondrian-blue hover:text-mondrian-blue/80 transition-colors"
-                    >
-                      <FaExternalLinkAlt size={20} />
+                      <FaExternalLinkAlt size={14} />
                     </a>
                   )}
                 </div>
@@ -136,35 +137,31 @@ const Projects = () => {
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
+              initial={{ scale: 0.96, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
+              exit={{ scale: 0.96, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="slab max-w-4xl w-full max-h-[90vh] overflow-y-auto p-8"
+              className="slab max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8"
             >
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 text-text-dim hover:text-mondrian-blue text-2xl"
+                className="absolute top-4 right-4 text-text-dim hover:text-mondrian-yellow text-2xl leading-none"
+                aria-label="Close"
               >
                 ×
               </button>
-              <h2 className="text-3xl font-bold mb-4">{selectedProject.title}</h2>
-              <p className="text-text-dim mb-6">{selectedProject.description}</p>
+              {selectedProject.category && (
+                <p className="font-mono text-xs uppercase tracking-widest text-mondrian-yellow mb-2">
+                  {selectedProject.category}
+                </p>
+              )}
+              <h2 className="text-2xl font-bold mb-4">{selectedProject.title}</h2>
+              <p className="text-text-dim mb-6 leading-relaxed">{selectedProject.description}</p>
               <div className="flex flex-wrap gap-2 mb-6">
                 {selectedProject.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 text-sm font-mono border"
-                    style={{ 
-                      borderColor: selectedProject.id % 5 === 0 ? '#4A9CFF' : 
-                      selectedProject.id % 5 === 1 ? '#FF5252' : 
-                      selectedProject.id % 5 === 2 ? '#FFEB00' :
-                      selectedProject.id % 5 === 3 ? '#4A9CFF' : '#FF5252',
-                      color: selectedProject.id % 5 === 0 ? '#4A9CFF' : 
-                      selectedProject.id % 5 === 1 ? '#FF5252' : 
-                      selectedProject.id % 5 === 2 ? '#FFEB00' :
-                      selectedProject.id % 5 === 3 ? '#4A9CFF' : '#FF5252'
-                    }}
+                    className="px-2.5 py-1 text-xs font-mono border border-slab-edge text-text-dim"
                   >
                     {tech}
                   </span>
@@ -176,7 +173,7 @@ const Projects = () => {
                     href={selectedProject.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 border border-accent text-accent font-mono text-sm uppercase tracking-wider hover:bg-accent hover:text-bg transition-colors"
+                    className="px-5 py-2.5 border border-mondrian-yellow text-mondrian-yellow font-mono text-xs uppercase tracking-wider hover:bg-mondrian-yellow hover:text-bg transition-colors"
                   >
                     View Live
                   </a>
@@ -186,7 +183,7 @@ const Projects = () => {
                     href={selectedProject.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 border border-accent text-accent font-mono text-sm uppercase tracking-wider hover:bg-accent hover:text-bg transition-colors"
+                    className="px-5 py-2.5 border border-mondrian-yellow text-mondrian-yellow font-mono text-xs uppercase tracking-wider hover:bg-mondrian-yellow hover:text-bg transition-colors"
                   >
                     View Code
                   </a>
@@ -196,7 +193,7 @@ const Projects = () => {
                     href={selectedProject.reportUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 border border-accent text-accent font-mono text-sm uppercase tracking-wider hover:bg-accent hover:text-bg transition-colors"
+                    className="px-5 py-2.5 border border-mondrian-yellow text-mondrian-yellow font-mono text-xs uppercase tracking-wider hover:bg-mondrian-yellow hover:text-bg transition-colors"
                   >
                     View Report
                   </a>
@@ -211,4 +208,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

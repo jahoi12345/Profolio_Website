@@ -22,19 +22,33 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
+      - name: Checkout legacy site
+        uses: actions/checkout@v4
+        with:
+          ref: legacy
+          path: legacy-src
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-      
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Build
         run: npm run build:gh-pages
-      
+
+      - name: Install legacy dependencies
+        working-directory: legacy-src
+        run: npm ci
+
+      - name: Build legacy site
+        working-directory: legacy-src
+        run: npx vite build --base=/Profolio_Website/legacy/ --outDir=../dist/legacy --emptyOutDir
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
       

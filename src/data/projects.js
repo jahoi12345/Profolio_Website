@@ -2,6 +2,7 @@ export const projects = [
   {
     id: 7,
     title: 'Chicago Transit Time Cartogram',
+    category: 'Data Visualization',
     description:
       'Interactive map that warps Chicago by real commute time instead of physical distance, built on a live multimodal routing graph over CTA, Metra, and Pace GTFS data -- with heatmaps, an isochrone time-budget scrubber, and side-by-side origin comparison.',
     image: `${import.meta.env.BASE_URL}chicago-cartogram.png`,
@@ -13,6 +14,7 @@ export const projects = [
   {
     id: 9,
     title: 'Cars & Bids Auction Modeling',
+    category: 'Data Science',
     description:
       'A full-stack auction tracker and ML price-projection research pipeline for Cars & Bids: a Playwright scraper feeding a live-tracking dashboard, and a 10-model backtesting pipeline (gradient-boosted trees, quantile regression, CatBoost, an ensemble) validated via leave-one-auction-out and rolling-origin time-holdout cross-validation, feature ablation, and hyperparameter search.',
     image: `${import.meta.env.BASE_URL}cars-and-bids-auction-tracker.png`,
@@ -24,6 +26,7 @@ export const projects = [
   {
     id: 1,
     title: 'NBA Data Visualization',
+    category: 'Data Visualization',
     description: 'Interactive data visualization project exploring NBA statistics and player performance metrics with dynamic charts and insights.',
     image: `${import.meta.env.BASE_URL}nba-data-visualization.png`,
     technologies: ['JavaScript', 'D3.js', 'Data Visualization', 'Web Development'],
@@ -34,6 +37,7 @@ export const projects = [
   {
     id: 2,
     title: 'Clash Royale Data Analysis',
+    category: 'Data Science',
     description: 'Comprehensive data analysis project involving data wrangling, statistical analysis, and visualization of Clash Royale game data.',
     image: `${import.meta.env.BASE_URL}clash-royale-data-analysis.png`,
     technologies: ['Data Wrangling', 'Data Analysis', 'Data Visualization', 'Statistical Analysis', 'Python', 'HTML'],
@@ -43,6 +47,7 @@ export const projects = [
   {
     id: 10,
     title: 'Camera Placement and Latino Population Share',
+    category: 'Data Science',
     description:
       'A fifteen-city econometric analysis of Flock/ALPR camera siting: negative-binomial regression, spatial and attenuation-bias correction, a race/class horse race, and a Bayesian hierarchical model testing whether camera density tracks Latino population share.',
     image: `${import.meta.env.BASE_URL}flock-latino-report.png`,
@@ -54,6 +59,7 @@ export const projects = [
   {
     id: 3,
     title: 'World Birth Rate Visualization',
+    category: 'Data Visualization',
     description: 'Interactive global visualization exploring birth rate trends and demographic patterns across countries and regions.',
     image: `${import.meta.env.BASE_URL}world-birth-rate-visualization.png`,
     technologies: ['JavaScript', 'D3.js', 'Data Visualization', 'Web Development'],
@@ -64,6 +70,7 @@ export const projects = [
   {
     id: 4,
     title: 'Data Visualization Tools',
+    category: 'Data Visualization',
     description: 'An interactive dashboard comparing the growth and adoption of popular data visualization libraries and BI tools from 2003 to 2025.',
     image: `${import.meta.env.BASE_URL}data-visualization-tools.png`,
     technologies: ['JavaScript', 'Plotly.js', 'HTML/CSS', 'Python', 'Data Analysis'],
@@ -74,6 +81,7 @@ export const projects = [
   {
     id: 5,
     title: 'NBA Shot Vision',
+    category: 'Data Science',
     description:
       'Statistical analysis of NBA shot outcomes: modeling field goal success from shot characteristics and game context using regression and model comparison (STAT 3032).',
     image: `${import.meta.env.BASE_URL}nba-shot-vision.png`,
@@ -84,6 +92,7 @@ export const projects = [
   {
     id: 6,
     title: 'AMBER',
+    category: 'Web Development',
     description:
       'A React app for the AMBER project: user and family views with time landscapes, messages, and demo data, built from a Figma design with a switch-person flow for testing.',
     image: `${import.meta.env.BASE_URL}amber-app.jpg`,
@@ -95,6 +104,7 @@ export const projects = [
   {
     id: 8,
     title: 'Unwatched',
+    category: 'Web Development',
     description:
       'An anti-surveillance directory and toolkit: a curated list of ALPR-avoidance and privacy tools, plus original tools that scrape municipal records for surveillance-tech procurement, parse FOIA responses for compliance issues, and route synthetic traffic over real streets against real, OpenStreetMap-sourced ALPR camera locations to quantify blanket-surveillance exposure.',
     image: `${import.meta.env.BASE_URL}unwatched.png`,

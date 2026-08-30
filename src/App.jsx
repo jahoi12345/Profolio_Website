@@ -1,4 +1,3 @@
-import CustomCursor from './components/CustomCursor';
 import GrainOverlay from './components/GrainOverlay';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
@@ -17,21 +16,20 @@ function App() {
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
-      
-      <CustomCursor />
+
       <GrainOverlay />
       <Navigation />
-      
+
       <main id="main-content" tabIndex="-1">
         <Hero />
-        <About />
         <Projects />
+        <About />
         <Experience />
         <Skills />
         <Websites />
         <Contact />
       </main>
-      
+
       <Footer />
     </>
   );
