@@ -26,13 +26,13 @@ const Projects = () => {
     <section
       id="projects"
       ref={ref}
-      className="pt-10 pb-20 px-6 md:px-10 max-w-[1600px] mx-auto"
+      className="pt-6 pb-24 px-6 md:px-10 max-w-[1600px] mx-auto"
     >
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        className="text-2xl md:text-3xl font-extrabold mb-6"
+        className="text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold leading-[0.95] tracking-[-0.03em] mb-8"
       >
         Projects
       </motion.h2>
@@ -70,7 +70,7 @@ const Projects = () => {
               className="slab overflow-hidden cursor-pointer group"
               onClick={() => setSelectedProject(project)}
             >
-              <div className="relative h-44 overflow-hidden bg-slab-surface">
+              <div className="relative h-64 overflow-hidden bg-slab-surface">
                 {project.image && (
                   <img
                     src={project.image}
