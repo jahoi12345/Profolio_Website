@@ -31,15 +31,12 @@ const About = () => {
         >
           <h2 className="text-2xl md:text-3xl font-extrabold mb-5">About</h2>
           <p className="text-text-dim leading-relaxed max-w-2xl">
-            I'm a data scientist and economics student at Northwestern University.
-            I like turning messy data into clear stories &mdash; through statistical
-            analysis, economic modeling, and interactive visualization.
+            I'm a data science and economics student at Northwestern University.
+            I like building projects using the tools I've learned.
           </p>
           <p className="text-text-dim leading-relaxed max-w-2xl mt-4">
             Through internships at Outside VC, Nexad, and Walmart, I've built AI
-            automation agents, classification models, and data pipelines. Outside
-            of work I build side projects at the intersection of data, economics,
-            and creative code &mdash; most of what's below started as one.
+            automation agents, classification models, and data pipelines.
           </p>
         </motion.div>
       </div>
