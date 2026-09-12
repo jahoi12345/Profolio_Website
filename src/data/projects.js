@@ -1,5 +1,17 @@
 export const projects = [
   {
+    id: 11,
+    title: 'Grand Slam Predictor & Studies',
+    category: 'Data Science',
+    description:
+      'A Grand Slam win/margin predictor built end-to-end from ATP/WTA match history -- Elo and form features, a stacked win classifier, a margin model, bookmaker-odds enrichment, and a live in-match win-probability model derived from a hierarchical Markov chain -- paired with a set of bespoke data visualizations: radial career-Elo rings for tennis legends, a tournament-bracket sunburst, a head-to-head rivalry dial, and a force-directed rivalry network with a category arc.',
+    image: `${import.meta.env.BASE_URL}grand-slam-predictor.png`,
+    technologies: ['Python', 'scikit-learn', 'pandas', 'D3.js', 'Elo Rating System', 'Markov Chains'],
+    liveUrl: 'https://jahoi12345.github.io/tennis-slam-predictor/',
+    githubUrl: 'https://github.com/jahoi12345/tennis-slam-predictor',
+    featured: true,
+  },
+  {
     id: 7,
     title: 'Chicago Transit Time Cartogram',
     category: 'Data Visualization',
