@@ -18,7 +18,7 @@ const About = () => {
           className="slab overflow-hidden aspect-square w-full max-w-[220px]"
         >
           <img
-            src={`${import.meta.env.BASE_URL}CASEheadshots-Elisa-188.jpg`}
+            src={`${import.meta.env.BASE_URL}CASEheadshots-Elisa-188.webp`}
             alt="James Li"
             className="w-full h-full object-cover"
           />
