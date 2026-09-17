@@ -24,6 +24,17 @@ export const projects = [
     featured: true,
   },
   {
+    id: 12,
+    title: "What's Kareem's Take?",
+    category: 'Data Science',
+    description:
+      'A full statistical analysis of all 787 clips from the YouTube show Subway Takes: every rider\'s gender and Kareem\'s verdict hand-classified from transcripts, then modeled against topic, engagement, and virality, including a duplicate-repost analysis that separates re-cut performance from channel growth, and a self-consistency audit of the classification itself.',
+    image: `${import.meta.env.BASE_URL}subway-takes-analysis.webp`,
+    technologies: ['Python', 'pandas', 'scipy', 'statsmodels', 'scikit-learn', 'Whisper', 'Chart.js'],
+    reportUrl: `${import.meta.env.BASE_URL}subway-takes-report.html`,
+    featured: false,
+  },
+  {
     id: 9,
     title: 'Cars & Bids Auction Modeling',
     category: 'Data Science',
