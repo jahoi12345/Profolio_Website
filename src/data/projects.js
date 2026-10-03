@@ -1,17 +1,5 @@
 export const projects = [
   {
-    id: 13,
-    title: 'Olive Oil, by the Bottle',
-    category: 'Data Visualization',
-    description:
-      'Thirty-five years of world olive oil production poured out as physics-simulated 3D glass bottles that fall and stack into one pile per country. Seven views (piles, a map, true-scale country shapes, liquid tanks, production against consumption, a glass-clink sound lab, and a shader lab) driven by International Olive Council data from 1990/91 to 2024/25. The oil inside each bottle is not a fluid simulation: it is a world-space fill plane with a lagging spring, the technique behind the bottles in Half-Life: Alyx and CS2.',
-    image: `${import.meta.env.BASE_URL}olive-oil-dataviz.webp`,
-    technologies: ['Three.js', 'Rapier Physics', 'GLSL', 'TypeScript', 'Web Audio', 'Vite'],
-    liveUrl: 'https://jahoi12345.github.io/olive-oil-dataviz/',
-    githubUrl: 'https://github.com/jahoi12345/olive-oil-dataviz',
-    featured: true,
-  },
-  {
     id: 11,
     title: 'Grand Slam Predictor & Studies',
     category: 'Data Science',
@@ -67,6 +55,18 @@ export const projects = [
     technologies: ['JavaScript', 'D3.js', 'Data Visualization', 'Web Development'],
     liveUrl: 'https://jahoi12345.github.io/NBA_Data_Vis_Project/',
     githubUrl: 'https://github.com/jahoi12345/NBA_Data_Vis_Project',
+    featured: true,
+  },
+  {
+    id: 13,
+    title: 'Olive Oil, by the Bottle',
+    category: 'Data Visualization',
+    description:
+      'Thirty-five years of world olive oil production poured out as physics-simulated 3D glass bottles that fall and stack into one pile per country. Seven views (piles, a map, true-scale country shapes, liquid tanks, production against consumption, a glass-clink sound lab, and a shader lab) driven by International Olive Council data from 1990/91 to 2024/25. The oil inside each bottle is not a fluid simulation: it is a world-space fill plane with a lagging spring, the technique behind the bottles in Half-Life: Alyx and CS2.',
+    image: `${import.meta.env.BASE_URL}olive-oil-dataviz.webp`,
+    technologies: ['Three.js', 'Rapier Physics', 'GLSL', 'TypeScript', 'Web Audio', 'Vite'],
+    liveUrl: 'https://jahoi12345.github.io/olive-oil-dataviz/',
+    githubUrl: 'https://github.com/jahoi12345/olive-oil-dataviz',
     featured: true,
   },
   {
