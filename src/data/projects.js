@@ -32,7 +32,7 @@ export const projects = [
     image: `${import.meta.env.BASE_URL}subway-takes-analysis.webp`,
     technologies: ['Python', 'pandas', 'scipy', 'statsmodels', 'scikit-learn', 'Whisper', 'Chart.js'],
     reportUrl: `${import.meta.env.BASE_URL}subway-takes-report.html`,
-    featured: false,
+    featured: true,
   },
   {
     id: 9,
