@@ -1,5 +1,16 @@
 export const projects = [
   {
+    id: 14,
+    title: 'Shelf Sweep',
+    category: 'Computer Vision',
+    description:
+      'Turns one slow phone-camera sweep of a home library into an itemised contents claim: live spine and object detection with frame-to-frame tracking and on-screen capture guidance, then OCR title reading, catalogue lookup, sourced pricing, a 2D panorama and a 3D map of the shelf, all written to a JSON claim packet and HTML/PDF report.',
+    image: `${import.meta.env.BASE_URL}shelf-sweep.webp`,
+    technologies: ['Python', 'FastAPI', 'YOLO', 'OpenCV', 'COLMAP', 'RapidOCR', 'three.js'],
+    githubUrl: 'https://github.com/jahoi12345/shelf-sweep',
+    featured: true,
+  },
+  {
     id: 11,
     title: 'Grand Slam Predictor & Studies',
     category: 'Data Science',
