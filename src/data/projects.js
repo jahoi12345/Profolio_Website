@@ -81,6 +81,18 @@ export const projects = [
     featured: true,
   },
   {
+    id: 15,
+    title: 'AeroPress Assistant',
+    category: 'iOS Development',
+    description:
+      'A SwiftUI iPhone app for AeroPress brewing: 88 built-in recipes (including World AeroPress Championship podium recipes) browsable by equipment, cup type and accessories, a step-by-step brew timer with per-step countdowns, and brew and beans journals with ratings and tasting notes.',
+    image: `${import.meta.env.BASE_URL}aeropress-assistant.webp`,
+    technologies: ['Swift', 'SwiftUI', 'iOS', 'Swift Playgrounds', 'UIKit Haptics'],
+    liveUrl: 'https://jahoi12345.github.io/aeropress-assistant/',
+    githubUrl: 'https://github.com/jahoi12345/aeropress-assistant',
+    featured: false,
+  },
+  {
     id: 2,
     title: 'Clash Royale Data Analysis',
     category: 'Data Science',
