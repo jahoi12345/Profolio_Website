@@ -1,5 +1,18 @@
 export const projects = [
   {
+    id: 16,
+    title: 'Cinematic Grammar Tokenizer',
+    category: 'Computer Vision',
+    description:
+      'Turns a film into one readable token row per shot -- shot size, lens, angle, framing, lighting, composition, depth of field, sound, palette and camera movement in fixed slots. A Qwen3-VL-4B vision-language model fine-tuned with LoRA on ShotQA labels the static attributes (74.7% on the ShotBench benchmark under its official protocol), an optical-flow and depth model reads camera movement, and an interactive explorer shows Night of the Living Dead (1968) shot by shot.',
+    image: `${import.meta.env.BASE_URL}cinematic-grammar-tokenizer.webp`,
+    technologies: ['Python', 'MLX', 'Qwen3-VL', 'LoRA Fine-Tuning', 'Optical Flow', 'Vega-Lite'],
+    liveUrl: 'https://jahoi12345.github.io/cinematic-grammar-tokenizer/app/',
+    githubUrl: 'https://github.com/jahoi12345/cinematic-grammar-tokenizer',
+    reportUrl: 'https://jahoi12345.github.io/cinematic-grammar-tokenizer/',
+    featured: true,
+  },
+  {
     id: 14,
     title: 'Shelf Sweep',
     category: 'Computer Vision',
